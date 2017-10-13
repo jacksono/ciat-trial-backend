@@ -23,7 +23,8 @@ class DevelopmentConfig(Config):
     # SQLALCHEMY_DATABASE_URI = "sqlite:///" + \
     #     os.path.join(basedir, "inm.db")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = 'sgykhzifsxaqca:343f51064cb2dbcd7bb9b08d13b340396e5615570fdb6b29b36c51b9ca7b944b@ec2-54-243-255-57.compute-1.amazonaws.com:5432/d8894uku5kb28i'
+'
 
 
 class TestingConfig(Config):
@@ -35,7 +36,7 @@ class TestingConfig(Config):
     # SQLALCHEMY_DATABASE_URI = "sqlite:///" + \
     #     os.path.join(basedir, "test.db")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = 'sgykhzifsxaqca:343f51064cb2dbcd7bb9b08d13b340396e5615570fdb6b29b36c51b9ca7b944b@ec2-54-243-255-57.compute-1.amazonaws.com:5432/d8894uku5kb28i'
 
 
 class ProductionConfig(Config):
