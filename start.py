@@ -2,7 +2,7 @@
 
 from inm.user_routes import (Home)
 from inm.result import GetAllResults, GetAllYearResults, GetAllCombinationResults
-from inm import api, app
+from app import api, app
 
 
 # Create api endpoints
