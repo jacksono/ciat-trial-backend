@@ -59,6 +59,3 @@ template = {
 api = Api(app=app, prefix="/api/v1")
 swagger = Swagger(app, template=template)
 mutable.MutableDict.associate_with(JsonEncodedDict)
-
-if __name__ == '__main__':
-    app.run()
