@@ -1,0 +1,53 @@
+"""Module to store settings for different environments."""
+
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+class Config(object):
+    """Set the default configurations."""
+
+    DEBUG = False
+    TESTING = False
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + \
+        os.path.join(basedir, "inm.db")
+
+
+class DevelopmentConfig(Config):
+    """Set the configurations for the development environment."""
+
+    DEBUG = True
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'postgres://sgykhzifsxaqca:343f51064cb2dbcd7bb9b08d13b340396e5615570fdb6b29b36c51b9ca7b944b@ec2-54-243-255-57.compute-1.amazonaws.com:5432/d8894uku5kb28i'
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///" + \
+    #     os.path.join(basedir, "inm.db")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = os.environ['SECRET_KEY']
+
+
+class TestingConfig(Config):
+    """Set the configurations for the testing environment."""
+
+    DEBUG = True
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'postgres://sgykhzifsxaqca:343f51064cb2dbcd7bb9b08d13b340396e5615570fdb6b29b36c51b9ca7b944b@ec2-54-243-255-57.compute-1.amazonaws.com:5432/d8894uku5kb28i'
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///" + \
+    #     os.path.join(basedir, "test.db")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = os.environ['SECRET_KEY']
+
+
+class ProductionConfig(Config):
+    """Set the configurations for the production environment."""
+
+    DEBUG = False
+    TESTING = False
+    SQLALCHEMY_DATABASE_URI = "sqlite:///models/inm.db"
+
+
+app_config = {
+    "development": DevelopmentConfig,
+    "testing": TestingConfig,
+    "production": ProductionConfig
+}
