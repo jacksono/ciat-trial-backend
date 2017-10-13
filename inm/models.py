@@ -1,6 +1,6 @@
 """Module to create the models for the app."""
 
-from inm.app import db, JsonEncodedDict
+from inm import db, JsonEncodedDict
 
 
 class Observation(db.Model):
