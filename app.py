@@ -5,11 +5,13 @@ from configuration.config import app_config
 from flask_restful import Api
 from flasgger import Swagger
 from sqlalchemy.ext import mutable
+from flask.ext.heroku import Heroku
 import json
 
 app = Flask(__name__)
 app.config.from_object(app_config["development"])
 db = SQLAlchemy(app)
+heroku = Heroku(app)
 
 
 class JsonEncodedDict(db.TypeDecorator):
