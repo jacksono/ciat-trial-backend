@@ -104,7 +104,6 @@ class GetAllCombinationResults(Resource):
         rotation = args.get("rot")
         rep = args.get("rep")
         combination_results = []
-        print("it", rep)
         for result in get_all_results():
             if (result["combination"]["RESIDUES"] == residues and
                result["combination"]["FYM"] == manure and
@@ -126,5 +125,4 @@ class GetAllCombinationResults(Resource):
                     combination_results.append({"Results2013": result["Results2013"]})
                     combination_results.append({"Results2014": result["Results2014"]})
                     combination_results.append({"Results2015": result["Results2015"]})
-
         return combination_results

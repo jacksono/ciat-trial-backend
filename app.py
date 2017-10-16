@@ -6,9 +6,11 @@ from flask_restful import Api
 from flasgger import Swagger
 from sqlalchemy.ext import mutable
 from flask.ext.heroku import Heroku
+from flask_cors import CORS, cross_origin
 import json
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(app_config["development"])
 db = SQLAlchemy(app)
 heroku = Heroku(app)
