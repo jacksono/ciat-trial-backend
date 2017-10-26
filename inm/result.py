@@ -125,4 +125,8 @@ class GetAllCombinationResults(Resource):
                     combination_results.append({"Results2013": result["Results2013"]})
                     combination_results.append({"Results2014": result["Results2014"]})
                     combination_results.append({"Results2015": result["Results2015"]})
-        return combination_results
+
+        if combination_results:
+            return combination_results
+        else:
+            return {"message": "No results"}
